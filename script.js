@@ -4,3 +4,14 @@ function scrollToSection(id) {
     });
 }
 
+const reveals = document.querySelectorAll('.reveal');
+
+window.addEventListener('scroll', () => {
+    reveals.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+        if (sectionTop < window.innerHeight - 100) {
+            section.classList.add('active');
+        }
+    });
+});
+
